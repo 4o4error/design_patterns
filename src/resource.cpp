@@ -1,45 +1,31 @@
 #include <iostream>
 #include <resource.h>
 
-// for sleep 
-#include <chrono>
-#include <thread>
-
-Resource::Resource(int v)
+bool Logger::openFile() {
+  ofs.open(fileName, std::ofstream::out);
+  if (ofs.good())
+  {
+    return true;
+  }
+  return false;
+}
+Logger::Logger(std::string fName)
 {
- 
-  value = v;
-
-  // simmulate labour intensive initialization 
-  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-  objectCount++;
-  std::cout << "Creating Resource object no. " << objectCount << std::endl;
-
+  fileName = fName; 
+  openFile();
 }
 
-Resource::~Resource()
+Logger::~Logger()
 {
-  std::cout << "Destroying Resource" << std::endl;
-}
-int Resource::getValue()
-{
-  return value;
-}
-void  Resource::setValue(int v)
-{
-  value = v;
-}
-
-void Resource::printValue()
-{
-  std::cout << "value in object no.  " << objectCount << " is "<<  value<< std::endl;
-}
-
-Resource* Resource::getInstance()
-{
-  static Resource resource;
-  return &resource;
+  ofs.close();
 }
 
 
-int Resource::objectCount = 0;
+void Logger::log(std::string str)
+{
+  if (!ofs.good())
+  {
+    openFile();
+  }
+  ofs << str << std::endl;
+}

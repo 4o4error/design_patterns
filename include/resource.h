@@ -1,17 +1,14 @@
-
-class Resource
+#include <string>
+#include <fstream>
+class Logger
 {
 public:
-  ~Resource();
-  int getValue();
-  void setValue(int v);
-  void printValue();
-  static Resource* getInstance();
+  Logger(std::string fName = "my_log.log");
+  ~Logger();
+  void log(std::string str);
 private:
-  Resource(int v = 0);
-  int value;
-  static int objectCount;
-
+  // returns true if file was opened for writing succesfully 
+  bool openFile();
+  std::string fileName;
+  std::ofstream ofs;
 };
-// create new Resource
-Resource* createResource();

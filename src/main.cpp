@@ -3,31 +3,25 @@
 
 void doSomething()
 {
-  // intialize resource
-  Resource* resource = Resource::getInstance();
-  resource->setValue(2);
-  resource->printValue();
-  // deletion is done when resouce goes out of scope (program termination) 
-  //delete resource;
+  std::cout << "In do something" << std::endl;
+  Logger* logger = new Logger("doSomething.log");
+  logger->log("Writing from do something");
+  delete logger;
 }
 
 void doSomethingElse()
 {
-  // intialize resource
-  Resource* resource = Resource::getInstance();
-  resource->setValue(4);
-  resource->printValue();
-  // deletion is done when resouce goes out of scope (program termination) 
-  //delete resource;
+  std::cout << "In do something else" << std::endl;
+  Logger* logger = new Logger("doSomethingElse.log");
+  logger->log("Writing from do something else");
+  delete logger;
 }
 
 int main() {
-  // intialize resource
-  Resource* resource = Resource::getInstance();
-  resource->setValue(0);
-  resource->printValue();
-  // deletion is done when resouce goes out of scope (program termination) 
-  //delete resource;
+  std::cout << "In main" << std::endl;
+  Logger* logger = new Logger("main.log");
+  logger->log("Writing from main");
+  delete logger;
 
   doSomething();
   doSomethingElse();
