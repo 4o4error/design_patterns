@@ -34,8 +34,17 @@ void Resource::printValue()
 {
   std::cout << "value in object no.  " << objectCount << " is "<<  value<< std::endl;
 }
+
+/**
+ don't initialize it for every call
+*/
+Resource* resource = nullptr;
 Resource* createResource() {
-  return new Resource;
+  if (resource == nullptr)
+  {
+    resource = new Resource;
+  }
+  return resource;
 }
 
 int Resource::objectCount = 0;

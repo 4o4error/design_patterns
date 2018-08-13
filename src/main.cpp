@@ -11,7 +11,7 @@ void doSomething()
   resource->setValue(2);
   resource->printValue();
   // delete resource after we're done with it
-  delete resource;
+  //delete resource;
 }
 
 void doSomethingElse()
@@ -21,7 +21,7 @@ void doSomethingElse()
   resource->setValue(4);
   resource->printValue();
   // delete resource after we're done with it
-  delete resource;
+  //delete resource;
 }
 
 int main() {
@@ -30,7 +30,7 @@ int main() {
   resource->setValue(0);
   resource->printValue();
   // delete resource after we're done with it
-  delete resource;
+  //delete resource;
 
   doSomething();
   doSomethingElse();
