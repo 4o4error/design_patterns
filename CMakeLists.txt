@@ -9,11 +9,10 @@ INCLUDE_DIRECTORIES(include)
 
 # add files
 SET(INCLUDE_FILES 
-    include/resource.h
+
 )
 
 set(SRC_FILES
-    src/resource.cpp
     src/main.cpp
 )
 
