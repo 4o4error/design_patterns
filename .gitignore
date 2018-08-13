@@ -36,3 +36,4 @@ bin/*
 lib/*
 # ignore everything in build
 build/*
+*.TMP
