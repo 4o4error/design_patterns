@@ -1,35 +1,32 @@
 #include <iostream>
 #include <resource.h>
 
-/**
-* ISSUE: memory is allocated/ de-allocated each use
-*/ 
 void doSomething()
 {
   // intialize resource
-  Resource* resource = createResource();
+  Resource* resource = Resource::getInstance();
   resource->setValue(2);
   resource->printValue();
-  // delete resource after we're done with it
+  // deletion is done when resouce goes out of scope (program termination) 
   //delete resource;
 }
 
 void doSomethingElse()
 {
   // intialize resource
-  Resource* resource = createResource();
+  Resource* resource = Resource::getInstance();
   resource->setValue(4);
   resource->printValue();
-  // delete resource after we're done with it
+  // deletion is done when resouce goes out of scope (program termination) 
   //delete resource;
 }
 
 int main() {
   // intialize resource
-  Resource* resource = createResource();
+  Resource* resource = Resource::getInstance();
   resource->setValue(0);
   resource->printValue();
-  // delete resource after we're done with it
+  // deletion is done when resouce goes out of scope (program termination) 
   //delete resource;
 
   doSomething();
