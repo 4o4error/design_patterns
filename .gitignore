@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# ignore everything in bin and lib
+bin/*
+lib/*
+# ignore everything in build
+build/*
