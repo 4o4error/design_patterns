@@ -13,6 +13,10 @@ SET(INCLUDE_FILES
   include/hot_drink.h
   include/tea.h
   include/coffee.h
+  include/drink_factory.h
+  include/hot_drink_factory.h
+  include/coffee_factory.h
+  include/tea_factory.h
 )
 
 set(SRC_FILES
@@ -21,6 +25,11 @@ set(SRC_FILES
     src/hot_drink.cpp
     src/tea.cpp
     src/coffee.cpp
+    src/drink_factory.cpp
+    src/hot_drink_factory.cpp
+    src/coffee_factory.cpp
+    src/tea_factory.cpp
+
 )
 
 # set out direcories
