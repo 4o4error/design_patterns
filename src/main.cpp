@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include <appliance.h>
 void main (){
-  std::cout << "Hello Design Patterns"<<std::endl;
+  Applience applience;
+  auto hot_drink = applience.prepare_drink("coffee");
+  hot_drink->consume();
 }
