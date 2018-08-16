@@ -9,11 +9,18 @@ INCLUDE_DIRECTORIES(include)
 
 # add files
 SET(INCLUDE_FILES 
-
+  include/appliance.h
+  include/hot_drink.h
+  include/tea.h
+  include/coffee.h
 )
 
 set(SRC_FILES
     src/main.cpp
+    src/appliance.cpp
+    src/hot_drink.cpp
+    src/tea.cpp
+    src/coffee.cpp
 )
 
 # set out direcories
