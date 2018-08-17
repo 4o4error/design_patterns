@@ -1,25 +1,15 @@
-cmake_minimum_required(VERSION 3.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.8)
 
+PROJECT (feline)
 
-SET(PROJECT_NAME DESIGN_PATTERNS)
-
-PROJECT(${PROJECT_NAME})
-
-INCLUDE_DIRECTORIES(include)
-
-# add files
-SET(INCLUDE_FILES 
-
-)
-
-set(SRC_FILES
-    src/main.cpp
-)
-
-# set out direcories
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)
-
-
-ADD_EXECUTABLE(${PROJECT_NAME} ${INCLUDE_FILES} ${SRC_FILES})
+ADD_SUBDIRECTORY(cats_exe)
+ADD_SUBDIRECTORY(cats_lib)
+ADD_SUBDIRECTORY(cats_domestic_lib)
+ADD_SUBDIRECTORY(cat_felis)
+ADD_SUBDIRECTORY(cats_felis_catus_lib)
+ADD_SUBDIRECTORY(cats_herpailurus_yagouaroundi_lib)
+ADD_SUBDIRECTORY(cats_lion_lib)
+ADD_SUBDIRECTORY(cats_puma_concolor_lib)
+ADD_SUBDIRECTORY(cats_serval_lib)
+ADD_SUBDIRECTORY(feline_catopuma_temminckii_lib)
+ADD_SUBDIRECTORY(Lynx_Pardinus_lib)
