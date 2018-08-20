@@ -127,10 +127,19 @@ void CUIDlg::OnPaint()
   CPaintDC dc(this); // device context for painting
 
   
-  std::vector<Point> points = { {10,10},{ 11,10 },{ 12,10 },{ 13,10 },{ 14,10 },
-  { 60,61 },{ 60,62 },{ 60,63 },{ 60,64 },{ 60,65 } };
-  DrawPoints(dc, points.begin(), points.end());
-  
+  vector<shared_ptr<VectorObject>> rectangles{
+    make_shared<VectorRectangle>(10,10,100,100),
+    make_shared<VectorRectangle>(30,30, 60, 60)
+  };
+
+  for (auto rectangle : rectangles)
+  {
+    for (auto line : *rectangle)
+    {
+      LineToPointAdapter lpo{ line };
+      DrawPoints(dc, lpo.begin(), lpo.end());
+    }
+  }  
 
   CDialogEx::OnPaint();
 }
