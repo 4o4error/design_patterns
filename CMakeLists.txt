@@ -9,11 +9,19 @@ INCLUDE_DIRECTORIES(include)
 
 # add files
 SET(INCLUDE_FILES 
-
+include/targetver.h
+include/UI.h
+include/UIDlg.h
+include/Geometry.h
+include/Resource.h
+include/stdafx.h
 )
 
 set(SRC_FILES
-    src/main.cpp
+  src/stdafx.cpp
+  src/UI.cpp
+  src/UI.rc
+  src/UIDlg.cpp
 )
 
 # set out direcories
@@ -22,4 +30,13 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)
 
 
+
+
 ADD_EXECUTABLE(${PROJECT_NAME} ${INCLUDE_FILES} ${SRC_FILES})
+
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:WINDOWS")
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS_DEBUG "_WINDOWS")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELWITHDEBINFO "/SUBSYSTEM:WINDOWS")
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS_RELWITHDEBINFO "_WINDOWS")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
+set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:WINDOWS")
